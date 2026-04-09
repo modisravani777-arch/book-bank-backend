@@ -1,5 +1,6 @@
 const mysql = require("mysql2");
 
+// Create connection using Railway environment variables
 const db = mysql.createConnection({
   host: process.env.MYSQLHOST || "localhost",
   user: process.env.MYSQLUSER || "root",
@@ -8,9 +9,10 @@ const db = mysql.createConnection({
   port: process.env.MYSQLPORT || 3306,
 });
 
+// Connect to MySQL
 db.connect((err) => {
   if (err) {
-    console.log("DB Error:", err);
+    console.error("DB Error ❌:", err);
   } else {
     console.log("MySQL Connected ✅");
   }
