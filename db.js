@@ -1,15 +1,13 @@
 const mysql = require("mysql2");
 
-// Railway environment variables
 const db = mysql.createConnection({
-  host: process.env.MYSQLHOST,          // e.g., mysql-qayj.railway.internal
-  user: process.env.MYSQLUSER,          // usually "root"
-  password: process.env.MYSQLPASSWORD,  // your Railway password
-  database: process.env.MYSQLDATABASE,  // e.g., "railway"
-  port: process.env.MYSQLPORT,          // e.g., 3306 or Railway provided port
+  host: "localhost",        // your local MySQL host
+  user: "root",             // local MySQL user
+  password: "Sravani@123",             // local MySQL password
+  database: "smart_book_bank", // your database name
+  port: 3306,               // default MySQL port
 });
 
-// Connect to database
 db.connect((err) => {
   if (err) {
     console.log("DB Error ❌:", err);
